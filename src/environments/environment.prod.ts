@@ -1,3 +1,6 @@
 export const environment = {
-  production: true
+  production: true,
+  logo: '../assets/img/darthVader.jpg',
+  urlDptoSIC: 'https://git.institutomilitar.com/',
+  host: 'http://swapi.dev/api/'
 };

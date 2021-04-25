@@ -1,7 +1,20 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-const routes: Routes = [];
+const routes: Routes = [
+  {
+    path: '',
+    loadChildren: () => import('src/app/home/home.module').then(m => m.HomeModule)
+  },
+  {
+    path: 'personajes',
+    loadChildren: () => import('./personajes/personajes.module').then(m => m.PersonajesModule)
+  },
+  {
+    path: 'planetas',
+    loadChildren: () => import('./planetas/planetas.module').then(m => m.PlanetasModule)
+  },
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

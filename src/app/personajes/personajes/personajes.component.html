@@ -1,0 +1,47 @@
+<div class="row">
+  <div class="col-10 col-sm-10 col-md-3 col-lg-3 col-xl-3">NOMBRE</div>
+  <div class="col-10 col-sm-10 col-md-3 col-lg-2 col-xl-2">GÉNERO</div>
+  <div class="col-10 col-sm-10 col-md-3 col-lg-3 col-xl-3">FECHA NACIMIENTO</div>
+  <div class="col-10 col-sm-10 col-md-3 col-lg-2 col-xl-2">MUNDO</div>
+</div>
+
+<div *ngFor="let personaje of personajes">
+  <div class="row mb-2">
+    <hr class='w-100'>
+    <div class="col-10 col-sm-10 col-md-3 col-lg-3 col-xl-3"><a class="" data-toggle="modal"
+        data-target="#modalPersonaje" (click)='verDatos(personaje)'> {{personaje.name}}</a></div>
+    <div class="col-10 col-sm-10 col-md-3 col-lg-2 col-xl-2">{{personaje.gender | i18nSelect: genderMap}}</div>
+    <div class="col-10 col-sm-10 col-md-3 col-lg-2 col-xl-2">{{personaje.birth_year | lowercase}}</div>
+    <div class="col-10 col-sm-10 col-md-3 col-lg-2 col-xl-2">
+      <div *ngIf='personaje.hair_color !== "n/a"; else elseBlock'>
+                        <button class="btn btn-info" [routerLink]="['/planetas', personaje.homeworld]">Mundo</button>
+      </div>
+      <ng-template #elseBlock>
+        <span>No tengo Pelo</span>
+      </ng-template>
+
+    </div>
+  </div><s></s>
+
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="modalPersonaje" tabindex="-1" role="dialog" aria-labelledby="datosPersonaje"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="datosPersonaje">Datos Completos Personaje</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <app-personaje [personaje]='personajeVerDatos'></app-personaje>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>
