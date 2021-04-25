@@ -6,11 +6,12 @@ import { PersonajesComponent } from './personajes/personajes.component';
 import { PersonajeComponent } from './personajes/personaje/personaje.component';
 import { FormsModule } from '@angular/forms';
 import { AuxiliarService } from '../service/auxiliar.service';
+import { PersonajeFormComponent } from './personaje-form/personaje-form.component';
 
 
 
 @NgModule({
-  declarations: [PersonajesComponent, PersonajeComponent],
+  declarations: [PersonajesComponent, PersonajeComponent, PersonajeFormComponent],
   imports: [
     CommonModule,
     PersonajesRoutingModule,

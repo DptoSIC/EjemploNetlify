@@ -46,8 +46,14 @@ export class PersonajeService {
       personajeApi.films);
   }
 
+  create(personaje: Personaje): void {
+    console.log(`Se ha creado el personaje: ${JSON.stringify(personaje)}`);
+  }
+
   getPersonajesPagina(pagina: number): Observable<any> {
     return this.auxService.getItemsPorPagina(this.urlEndPoint, pagina);
   }
+
+
 
 }

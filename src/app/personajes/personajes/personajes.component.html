@@ -2,26 +2,28 @@
   <div class="col-10 col-sm-10 col-md-3 col-lg-3 col-xl-3">NOMBRE</div>
   <div class="col-10 col-sm-10 col-md-3 col-lg-2 col-xl-2">GÉNERO</div>
   <div class="col-10 col-sm-10 col-md-3 col-lg-3 col-xl-3">FECHA NACIMIENTO</div>
-  <div class="col-10 col-sm-10 col-md-3 col-lg-2 col-xl-2">MUNDO</div>
+  <div class="col-10 col-sm-10 col-md-3 col-lg-2 col-xl-2">PLANETA</div>
+  <div class="col-10 col-sm-10 col-md-3 col-lg-2 col-xl-2">COLOR DE PELO</div>
 </div>
 
-<div *ngFor="let personaje of todosPersonajes">
+<div *ngFor="let personaje of personajes">
   <div class="row mb-2">
     <hr class='w-100'>
     <div class="col-10 col-sm-10 col-md-3 col-lg-3 col-xl-3"><a class="" data-toggle="modal"
-        data-target="#modalPersonaje" (click)='verDatos(personaje)'> {{personaje.name}}</a></div>
-    <div class="col-10 col-sm-10 col-md-3 col-lg-2 col-xl-2">{{personaje.gender | i18nSelect: genderMap}}</div>
-    <div class="col-10 col-sm-10 col-md-3 col-lg-2 col-xl-2">{{personaje.birth_year | lowercase}}</div>
+        data-target="#modalPersonaje" (click)='verDatos(personaje)'> {{personaje.nombre}}</a></div>
+    <div class="col-10 col-sm-10 col-md-3 col-lg-2 col-xl-2">{{personaje.genero | i18nSelect: genderMap}}</div>
+    <div class="col-10 col-sm-10 col-md-3 col-lg-3 col-xl-3">{{personaje.fechaNac | lowercase}}</div>
     <div class="col-10 col-sm-10 col-md-3 col-lg-2 col-xl-2">
-      <div *ngIf='personaje.hair_color !== "n/a"; else elseBlock'>
-                        <button class="btn btn-info" [routerLink]="['/planetas', personaje.homeworld]">Mundo</button>
+        <button class="btn btn-info" [routerLink]="['/planeta', personaje.planeta]">Mundo</button>
+        </div>
+        <div class="col-10 col-sm-10 col-md-2 col-lg-2 col-xl-2">
+          <div *ngIf='personaje.colorPelo != "none" && personaje.colorPelo != "n/a"; else elseBlock'>{{personaje.colorPelo}}
+          </div>
       </div>
       <ng-template #elseBlock>
         <span>No tengo Pelo</span>
       </ng-template>
-
-    </div>
-  </div><s></s>
+  </div>
 
 </div>
 
@@ -37,7 +39,7 @@
         </button>
       </div>
       <div class="modal-body">
-        <app-personaje [personaje]='personajeVerDatos'></app-personaje>
+        <app-personaje [personaje]='personajeVerDatos' (personajeEliminar)='onPersonajeEliminar($event)'></app-personaje>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>

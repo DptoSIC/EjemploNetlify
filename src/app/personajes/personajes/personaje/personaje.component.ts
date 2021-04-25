@@ -1,5 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { Personaje } from '../../models/personaje';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { PersonajeImpl } from '../../models/personaje-impl';
 
 @Component({
   selector: 'app-personaje',
@@ -8,11 +8,14 @@ import { Personaje } from '../../models/personaje';
   ]
 })
 export class PersonajeComponent implements OnInit {
-  @Input() personaje: Personaje;
+  @Input() personaje: PersonajeImpl;
+  @Output() personajeEliminar = new EventEmitter<PersonajeImpl>();
 
   constructor() { }
 
   ngOnInit(): void {
   }
-
+  eliminar(): void {
+    this.personajeEliminar.emit(this.personaje);
+  }
 }

@@ -11,7 +11,7 @@ const routes: Routes = [
     loadChildren: () => import('./personajes/personajes.module').then(m => m.PersonajesModule)
   },
   {
-    path: 'planetas',
+    path: 'planeta',
     loadChildren: () => import('./planetas/planetas.module').then(m => m.PlanetasModule)
   },
 ];

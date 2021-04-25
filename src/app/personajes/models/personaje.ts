@@ -1,12 +1,12 @@
 export interface Personaje {
-  name: string;
-  height: string;
-  mass: string;
-  hair_color: string;
-  skin_color: string;
-  eye_color: string;
-  birth_year: string;
-  gender: string;
-  homeworld: string;
-  films: any[];
+  nombre: string;
+  estatura: string;
+  peso: string;
+  colorPelo: string;
+  colorPiel: string;
+  colorOjos: string;
+  fechaNac: string;
+  genero: string;
+  planeta: string;
+  peliculas: any[];
 }

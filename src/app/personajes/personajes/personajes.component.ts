@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuxiliarService } from 'src/app/service/auxiliar.service';
 import { Personaje } from '../models/personaje';
+import { PersonajeImpl } from '../models/personaje-impl';
 import { PersonajeService } from '../service/personaje.service';
 
 @Component({
@@ -29,6 +30,11 @@ export class PersonajesComponent implements OnInit {
 
   verDatos(personaje: Personaje): void {
     this.personajeVerDatos = personaje;
+  }
+
+  onPersonajeEliminar(personaje: PersonajeImpl): void {
+    console.log(`He eliminado a ${personaje.nombre}`);
+    this.personajes = this.personajes.filter(p => personaje !== p)
   }
 
   getTodosPersonajes(): void {
