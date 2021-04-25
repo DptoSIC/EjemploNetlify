@@ -1,6 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { tap } from 'rxjs/operators';
+import { AuxiliarService } from 'src/app/service/auxiliar.service';
 import { environment } from 'src/environments/environment';
 import { Personaje } from '../models/personaje';
 import { PersonajeImpl } from '../models/personaje-impl';
@@ -12,7 +14,9 @@ export class PersonajeService {
   private host: string = environment.host;
   private urlEndPoint: string = `${this.host}people`;
 
-  constructor(private http: HttpClient) { }
+  constructor(
+    private http: HttpClient,
+    private auxService: AuxiliarService) { }
 
 
   getPersonajes(): Observable<any> {
@@ -40,7 +44,10 @@ export class PersonajeService {
       personajeApi.gender,
       personajeApi.homeworld,
       personajeApi.films);
+  }
 
+  getPersonajesPagina(pagina: number): Observable<any> {
+    return this.auxService.getItemsPorPagina(this.urlEndPoint, pagina);
   }
 
 }
