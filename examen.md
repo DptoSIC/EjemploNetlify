@@ -32,7 +32,7 @@ _El incumplimiento de este apartado supondrá  la calificación más baja (cero)
     1. (2 puntos) La capacidad de exportación de los módulos que se generen
     1. (2 puntos) Que cada ruta tenga su propio módulo
     1. (2 puntos) Que no haya errores en la consola del navegador cuando entregue el examen
-    1. (2 puntos) No haya mensajes de ningún tipo en la consola del navegador
+    1. (2 puntos) No haya mensajes de ningún tipo en la consola del navegador, a excepción de los solicitados en alguno de los apartados del examen. 
     1. (2 puntos) Que el código no tenga errores
     1. (2 puntos) Minimizar las llamadas a la API
     1. (2 puntos) No haya código inservible
