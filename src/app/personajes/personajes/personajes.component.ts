@@ -13,9 +13,6 @@ import { PersonajeService } from '../service/personaje.service';
 export class PersonajesComponent implements OnInit {
   personajes: Personaje[] = [];
   todosPersonajes: Personaje[] = [];
-  genderMap: any = {
-    'male': 'Macho', 'female': 'Hembra', 'n/a': 'Sin Género'
-  };
   personajeVerDatos: Personaje;
   numPaginas: number = 0;
 
