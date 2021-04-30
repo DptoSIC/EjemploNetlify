@@ -115,8 +115,8 @@ _El incumplimiento de este apartado supondrá  la calificación más baja (cero)
         1. (6 puntos) Su propio acceso a datos.  
           <p style="PAGE-BREAK-AFTER: always;"></p>
 1. En la pantalla personajes se debe mostrar también el color de pelo de los personajes. Tenga en cuenta que algunos personajes como los robots no tienen pelo y otros como `Darth Vader` tampoco, se le pide:
-    1. Si el personaje tiene pelo ponga muestre el color de su pelo.
-    1. Si el personaje no tiene pelo o es calvo muestre el texto `No tengo pelo`
+    1. (6 puntos) Si el personaje tiene pelo ponga muestre el color de su pelo.
+    1. (6 puntos) Si el personaje no tiene pelo o es calvo muestre el texto `No tengo pelo`
 1. Cuando se abre el modal con el detalle de cada personaje (apartado 11):
     1. (2 puntos) Además de los datos de ese personaje, debe aparecer un botón de bootstrap en color rojo con el texto eliminar.
     1. (8 puntos) Al presionar ese botón debe comunicar al componente que tiene todos los personajes que hay que eliminar ese personaje. Por la consola del navegador debe aparecer el texto `He eliminado a : nombre` donde _nombre_ es el nombre del personaje que ha eliminado.
